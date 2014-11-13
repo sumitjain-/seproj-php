@@ -12,9 +12,9 @@
 	<script src="<?php echo site_url() ?>components/angular-route/angular-route.min.js" ></script>
 	<script src="<?php echo site_url() ?>components/angular-animate/angular-animate.min.js" ></script>
 </head>
-<body ng-app="classroomAppOne" >
+<body ng-app="classroomAppOne" ng-controller="rootCtrl" >
 	<?php $this->load->view('components/header') ?>
-
+	<?php $this->load->view('components/sidebar') ?>
 	<section class="appView" ng-view >
 		
 	</section>
@@ -22,13 +22,15 @@
 	<script src="<?php echo site_url() ?>js/classroomAppOne/app.js" ></script>
 
 	<!-- ------------------- Services ------------------------ -->
-	<!-- <script src="../js/seedonDevApp/services/*.js" ></script> -->
+	<!-- <script src="<?php// echo site_url() ?>/js/classroomAppOne/services/*.js" ></script> -->
+
 
 	<!-- ------------------- Controllers ------------------------ -->
-	<!-- <script src="../js/seedonDevApp/controllers/*.js" ></script> -->
+	<!-- <script src="<?php// echo site_url() ?>/js/classroomAppOne/controllers/*.js" ></script> -->
+	<script src="<?php echo site_url() ?>/js/classroomAppOne/controllers/RootCtrl.js" ></script>
 
 	<!-- ------------------- Directives ------------------------ -->
-	<!-- <script src="../js/seedonDevApp/directives/*.js" ></script> -->
+	<!-- <script src="<?php// echo site_url() ?>/js/classroomAppOne/directives/*.js" ></script> -->
 
 	<!-- ------------------- Services ------------------------ -->
 	<!-- <script src="../js/seedonDevApp/filters/*.js" ></script> -->
