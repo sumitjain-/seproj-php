@@ -26,10 +26,29 @@ class Site extends CI_Controller {
 		}
 	}
 
-	public function register()
+	public function create_course()
 	{
-		$this->load->view('register');
+		if($this->flexi_auth->is_logged_in()){
+			$this->load->view('site/home', array( "view_name" => "create_course" ) );
+		}else{
+			redirect(site_url()."index.php/account/not_logged_in");
+		}
 	}
+
+	public function course_database()
+	{
+		if($this->flexi_auth->is_logged_in()){
+			$this->load->view('site/home', array( "view_name" => "course_database" ) );
+		}else{
+			redirect(site_url()."index.php/account/not_logged_in");
+		}
+	}
+	
+
+	// public function register()
+	// {
+	// 	$this->load->view('register');
+	// }
 }
 
 /* End of file accounts.php */

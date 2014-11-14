@@ -5,16 +5,21 @@ class Api extends CI_Controller {
 	
 	public function create_course()
 	{
-		$data =array(
-			'teacher_name' => $this->input->post('teacher_name')
-			,'timings' => $this->input->post('timings')
-			,'start_date' => $this->input->post('start_date')
-			,'end_date' => $this->input->post('end_date')
-			,'course_date' => $this->input->post('course_date')
-			);
+		if($this->flexi_auth->is_logged_in()){
+			$data = array(
+				'course_name' => $this->input->post('course_name')
+				,'teacher_name' => $this->input->post('teacher_name')
+				,'timings' => $this->input->post('timings')
+				,'start_date' => $this->input->post('start_date')
+				,'end_date' => $this->input->post('end_date')
+				,'schedule' => $this->input->post('schedule')
+				);
 
-		$this->load->model('course_model');
-		$this->course_model->insert_course($data);
+			$this->load->model('course_model');
+			$this->course_model->insert_course($data);
+		}
+
+		$this->load->view("site/home", array("view_name"=> "create_course", "message" => "New course created"));
 	}
 }
 

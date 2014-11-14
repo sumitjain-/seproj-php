@@ -38,21 +38,21 @@ class Account extends CI_Controller {
 		redirect(site_url()."index.php/account/not_logged_in");
 	}
 
-	public function reg()
-	{
-		$data = new StdClass();
-		$data->user = $this->input->post('username');
-		$data->email = $this->input->post('email');
-		$data->pass = $this->input->post('password');
+	// public function reg()
+	// {
+	// 	$data = new StdClass();
+	// 	$data->user = $this->input->post('username');
+	// 	$data->email = $this->input->post('email');
+	// 	$data->pass = $this->input->post('password');
 
-		$insert = $this->flexi_auth->insert_user($data->email, $data->user, $data->pass, [], 1, TRUE);
-		if($insert){
-			echo "Successfully created user.";
-		}else {
-			echo "Err: Something went wrong.";
-		}
+	// 	$insert = $this->flexi_auth->insert_user($data->email, $data->user, $data->pass, [], 1, TRUE);
+	// 	if($insert){
+	// 		echo "Successfully created user.";
+	// 	}else {
+	// 		echo "Err: Something went wrong.";
+	// 	}
 
-	}
+	// }
 }
 
 /* End of file accounts.php */

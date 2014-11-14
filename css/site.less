@@ -82,11 +82,79 @@ section.appView {
 	padding-top: 44px;
 
 	h1.section_name {
-		padding-left: 10px ;
+		margin-left: 10px ;
+		margin-bottom: 20px ;
 		padding-top: 10px ;
 		font-size: 22px ;
 		color: #212121 ;
 		font-weight: 400 ;
+	}
+
+	.label {
+		margin-left: 20px;
+		margin-bottom: 10px;
+		font-size: 14px;
+		color: #000;
+		min-width: 200px;
+		display: inline-block;
+	}
+
+	.input.text {
+		margin: 5px;
+		padding: 5px;
+		width: 400px;
+		font-size: 16px;
+		border: none;
+		border-bottom: solid #ddd 1px ;
+
+		&:focus {
+			outline:none;
+			border-bottom: solid #42A5F5 1px ;
+		}
+	}
+
+	.btn {
+		margin: 20px ;
+		padding:10px 15px;
+		font-size:14px;
+		border-radius: 6px ;
+		border:none;
+		color: #fff ;
+		cursor: pointer;
+	}
+
+	.btn-red {
+		background: #f44336 ;
+	}
+
+	.btn-blue {
+		background: #2196F3 ;
+	}
+
+	.btn-green {
+		background: #4CAF50 ;
+	}
+
+	.btn-teal {
+		background: #009688 ;
+	}
+
+	.btn[type="submit"] {
+		margin-left: 20px ;
+	}
+
+	p.message {
+		width: 300px;
+		font-size: 14px;
+		margin: 30px;
+		padding: 15px 20px;
+		border: solid #ddd 1px;
+		border-radius: 6px;
+		color: #fff;
+
+		&.success {
+			background: #4CAF50;
+		}
 	}
 
 }
@@ -114,7 +182,11 @@ aside {
 			width: 100% ;
 			padding-left: 10px ;
 			/*padding-top: 10px ;*/
-
+			&.top > a:hover {
+				background: transparent;
+				color: #000 ;
+				cursor: default; 
+			}
 			a {
 				width: 100% ;
 				display: block;
